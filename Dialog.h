@@ -21,7 +21,7 @@ class Dialog : public QDialog {
 public:
 	Dialog(QWidget *parent = 0);
 	~Dialog();
-	void edit(QModelIndex);
+	void edit(int);
 	void SetModel(QSqlTableModel*);
 protected:
     void changeEvent(QEvent *e);

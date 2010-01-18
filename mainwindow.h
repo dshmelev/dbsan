@@ -20,12 +20,10 @@ class MainWindow : public QMainWindow
 public:
 	MainWindow(QWidget *parent = 0);
 	~MainWindow();
-	QSqlTableModel *model;
 
 private:
 	Ui::MainWindow *ui;
-//	QSqlTableModel *model;
-	QSqlDatabase db;
+	QSqlTableModel *model;
 
 private slots:
         void on_actionSettings_triggered();

@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 	splash->showMessage("DBsan v.0.1 \n LLC Strizh 2009",Qt::Alignment(Qt::AlignRight | Qt::AlignTop),"white");
 	splash->show();
             ui->setupUi(this);
+			QSqlDatabase db;
             connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(refresh()));
             connect(ui->actionAbout,SIGNAL(triggered(bool)),this,SLOT(about()));
             QTimer *refresh = new QTimer(this);
@@ -21,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent)
             {
 				db = QSqlDatabase::addDatabase("QSQLITE", "connection");
 				db.setDatabaseName(settings::getSettings("file"));
-				model->database()=db;
             }
             else
             {
@@ -48,7 +48,6 @@ void MainWindow::on_btnAdd_clicked()
 	Dialog dlg;
 	dlg.SetModel(model);
 	dlg.exec();
-	model->submitAll();
 }
 
 void MainWindow::refresh()
@@ -117,10 +116,10 @@ QMessageBox::about( this, "About DBSan",
 
 void MainWindow::on_btnEd_clicked()
 {
-	QModelIndex index =ui->tableView->selectionModel()->currentIndex();
+	int row =ui->tableView->selectionModel()->currentIndex().row();
 	Dialog dlg;
 	dlg.SetModel(model);
-	dlg.edit(index);
+	dlg.edit(row);
 	dlg.exec();
 }
 
