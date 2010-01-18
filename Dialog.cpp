@@ -30,57 +30,20 @@ void Dialog::changeEvent(QEvent *e)
 
 void Dialog::on_buttonBox_accepted()
 {
-	model->setRecord(0, // Намутить запись в модель
-	/*
-        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "insert");
-        db.setDatabaseName(qApp->applicationDirPath() + "/database.sqlite");
-        if (!db.open())
+	int row = model->rowCount();
+	model->insertRows(row, 1);
+	if (model->setData(model->index(row, 0), 0))
 	{
-		QMessageBox::critical(this, this->windowTitle(), tr("База данных не может быть открыта."));
-		return;
-	}
-	QString str_query;
-	if (StrKey.isEmpty())
-	{
-		QTextStream(&str_query) <<"INSERT INTO `table` VALUES ( "\
-			<<"NULL,'"<<m_ui->ed_name->text()\
-			<<"','"<<m_ui->ed_user->text()\
-			<<"','"<<m_ui->ed_organization->text()\
-			<<"','"<<m_ui->ed_site->text()\
-			<<"','"<<m_ui->ed_mail->text()\
-			<<"','"<<m_ui->ed_post->text()\
-			<<"','"<<m_ui->ed_phone->text()\
-                        <<"','"<<m_ui->ed_data_call->text()\
-                        <<"','"<<m_ui->ed_data_next_call->text()\
-			<<"','"<<m_ui->ed_internal->text()\
-			<<"','"<<m_ui->ed_manager_name->text()\
-			<<"','"<<m_ui->ed_comment->text()<<"');";
-	}
-	else
-	{
-		QTextStream(&str_query) <<"UPDATE `table` SET "\
-			<<"name='"<<m_ui->ed_name->text()\
-			<<"',user='"<<m_ui->ed_user->text()\
-			<<"',organization='"<<m_ui->ed_organization->text()\
-			<<"',site='"<<m_ui->ed_site->text()\
-			<<"',mail='"<<m_ui->ed_mail->text()\
-			<<"',post='"<<m_ui->ed_post->text()\
-			<<"',telephone='"<<m_ui->ed_phone->text()\
-                        <<"',data='"<<m_ui->ed_data_call->text()\
-                        <<"',data_call='"<<m_ui->ed_data_next_call->text()\
-			<<"',internal='"<<m_ui->ed_internal->text()\
-			<<"',manager_name='"<<m_ui->ed_manager_name->text()\
-			<<"',comment='"<<m_ui->ed_comment->text()<<"' WHERE key='"<<StrKey<<"';";
-	}
-        QSqlQuery query(db);
-	if (!query.exec(str_query))  QMessageBox::critical(this, tr("Ошибка"), str_query + tr("Сообщение БД:\r\n %1").arg(query.lastError().databaseText()));
-		db.close();*/
+		QMessageBox::critical(this,"ROW","YES!");
+	};
+	model->setData(model->index(row, 1), "AAA");
+	model->setData(model->index(row, 2) , "TESS");
+	model->submitAll();
+	QMessageBox::critical(this,"",	model->database().connectionName());
 }
 
 void Dialog::edit(QModelIndex index) {
-//	QString str=model->data(model->index(index.row(),0)).toString();
-//	QMessageBox::warning(this,"",str);
-	StrKey=index;
+/*	StrKey=index;
         QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "insert");
         db.setDatabaseName(qApp->applicationDirPath() + "/database.sqlite");
         if (!db.open())
@@ -105,7 +68,7 @@ void Dialog::edit(QModelIndex index) {
 	m_ui->ed_internal->setText(query.value(10).toString());
 	m_ui->ed_manager_name->setText(query.value(11).toString());
 	m_ui->ed_comment->setText(query.value(12).toString());
-	db.close();
+	db.close(); */
 }
 
 void Dialog::SetModel(QSqlTableModel *new_model)

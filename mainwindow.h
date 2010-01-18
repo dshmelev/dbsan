@@ -20,18 +20,19 @@ class MainWindow : public QMainWindow
 public:
 	MainWindow(QWidget *parent = 0);
 	~MainWindow();
+	QSqlTableModel *model;
 
 private:
 	Ui::MainWindow *ui;
-	QSqlTableModel *model;
+//	QSqlTableModel *model;
 	QSqlDatabase db;
 
 private slots:
         void on_actionSettings_triggered();
-        void on_pushButton_3_clicked();
+		void on_btnEd_clicked();
 	void on_btn_delete_clicked();
 	void refresh();
-	void on_pushButton_2_clicked();
+	void on_btnAdd_clicked();
 	void about();
 };
 

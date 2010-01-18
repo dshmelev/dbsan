@@ -19,8 +19,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 			if (settings::getSettings("DB")=="0")
             {
-                db = QSqlDatabase::addDatabase("QSQLITE", "connection");
-                db.setDatabaseName(settings::getSettings("file"));
+				db = QSqlDatabase::addDatabase("QSQLITE", "connection");
+				db.setDatabaseName(settings::getSettings("file"));
+				model->database()=db;
             }
             else
             {
@@ -42,12 +43,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_btnAdd_clicked()
 {
 	Dialog dlg;
 	dlg.SetModel(model);
 	dlg.exec();
-	refresh();
+	model->submitAll();
 }
 
 void MainWindow::refresh()
@@ -114,14 +115,13 @@ QMessageBox::about( this, "About DBSan",
         "mailto: avikez@gmail.com\n");
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_btnEd_clicked()
 {
 	QModelIndex index =ui->tableView->selectionModel()->currentIndex();
 	Dialog dlg;
 	dlg.SetModel(model);
 	dlg.edit(index);
 	dlg.exec();
-	refresh();
 }
 
 void MainWindow::on_actionSettings_triggered()

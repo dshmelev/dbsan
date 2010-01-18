@@ -14,7 +14,7 @@
    <string>DBsan</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resource.qrc">
+   <iconset>
     <normaloff>:/res/icon.png</normaloff>:/res/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -118,7 +118,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btnAdd">
         <property name="text">
          <string>Add</string>
         </property>
@@ -141,7 +141,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="btnEd">
         <property name="text">
          <string>Edit</string>
         </property>
@@ -196,7 +196,7 @@
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -228,9 +228,7 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="resource.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>actionQuit</sender>
