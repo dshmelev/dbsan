@@ -234,8 +234,8 @@
     <value type="QString" >XDG_DATA_DIRS=/usr/share:/usr/local/share</value>
     <value type="QString" >XDG_DATA_HOME=/home/avik/.local/share</value>
     <value type="QString" >XDG_MENU_PREFIX=lxde-</value>
-    <value type="QString" >XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1263825250.864163-1382673297</value>
-    <value type="QString" >_LXSESSION_PID=1763</value>
+    <value type="QString" >XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1263909097.947318-1553743639</value>
+    <value type="QString" >_LXSESSION_PID=1794</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >/home/avik/workspace/dbsan/bdase_san.pro</value>
@@ -288,8 +288,8 @@
     <value type="QString" >XDG_DATA_DIRS=/usr/share:/usr/local/share</value>
     <value type="QString" >XDG_DATA_HOME=/home/avik/.local/share</value>
     <value type="QString" >XDG_MENU_PREFIX=lxde-</value>
-    <value type="QString" >XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1263825250.864163-1382673297</value>
-    <value type="QString" >_LXSESSION_PID=1763</value>
+    <value type="QString" >XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1263909097.947318-1553743639</value>
+    <value type="QString" >_LXSESSION_PID=1794</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >-w</value>

@@ -31,8 +31,15 @@ MainWindow::MainWindow(QWidget *parent)
                 db.setUserName(settings::getSettings("login"));
                 db.setPassword(settings::getSettings("passwd"));
 			}
+
 			model = new QSqlTableModel(ui->tableView,db);
 			model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+			if (!model->database().open())
+			{
+				QMessageBox::critical(this, this->windowTitle(), tr("База данных не может быть открыта: %1").arg(model->database().lastError().databaseText()));
+				return;
+			}
+			model->setTable("table");
 			ui->tableView->setModel(model);
             this->refresh();
 			splash->finish(this);
@@ -78,7 +85,6 @@ void MainWindow::refresh()
 	model->setHeaderData(10, Qt::Horizontal, tr("Внутренний"));
 	model->setHeaderData(11, Qt::Horizontal, tr("Имя менеджера"));
 	model->setHeaderData(12, Qt::Horizontal, tr("Коментарий"));
-
 	ui->tableView->resizeColumnsToContents();
 	ui->tableView->selectRow(index.row());
 }
