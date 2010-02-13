@@ -6,7 +6,7 @@ Dialog::Dialog(QWidget *parent) :
     m_ui(new Ui::Dialog)
 {
     m_ui->setupUi(this);
-    StrKey="";
+    StrKey=-1;
     m_ui->ed_data_call->setDate(QDate::currentDate ());
     m_ui->ed_data_next_call->setDate(QDate::currentDate());
 }
@@ -30,8 +30,12 @@ void Dialog::changeEvent(QEvent *e)
 
 void Dialog::on_buttonBox_accepted()
 {
-	int row = model->rowCount();
-	model->insertRows(row, 1);
+        int row = StrKey;
+        if (row==-1)
+        {
+            row = model->rowCount();
+            model->insertRows(row, 1);
+        }
 	model->setData(model->index(row, 1),m_ui->ed_name->text());
 	model->setData(model->index(row, 2),m_ui->ed_user->text());
 	model->setData(model->index(row, 3),m_ui->ed_organization->text());
@@ -48,7 +52,8 @@ void Dialog::on_buttonBox_accepted()
 }
 
 void Dialog::edit(int row) {
-	m_ui->ed_name->setText(model->index(row,1).data().toString());
+        StrKey=row;
+        m_ui->ed_name->setText(model->index(row,1).data().toString());
 	m_ui->ed_user->setText(model->index(row,2).data().toString());
 	m_ui->ed_organization->setText(model->index(row,3).data().toString());
 	m_ui->ed_site->setText(model->index(row,4).data().toString());

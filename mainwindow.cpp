@@ -8,41 +8,42 @@ MainWindow::MainWindow(QWidget *parent)
 {
 	QSplashScreen *splash = new QSplashScreen;
 	splash->setPixmap(QPixmap(":/res/splash.jpg"));
-	splash->showMessage("DBsan v.0.1 \n LLC Strizh 2009",Qt::Alignment(Qt::AlignRight | Qt::AlignTop),"white");
+        splash->showMessage("DBsan v.0.1 \n FreeNET 2009",Qt::Alignment(Qt::AlignRight | Qt::AlignTop),"white");
 	splash->show();
-            ui->setupUi(this);
-			QSqlDatabase db;
-            connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(refresh()));
-            connect(ui->actionAbout,SIGNAL(triggered(bool)),this,SLOT(about()));
-            QTimer *refresh = new QTimer(this);
-            connect(refresh,SIGNAL(timeout()),this,SLOT(refresh()));
-            refresh->start(30000);
+        ui->setupUi(this);
+        QSqlDatabase db;
+        connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(refresh()));
+        connect(ui->actionAbout,SIGNAL(triggered(bool)),this,SLOT(about()));
+        QTimer *refresh = new QTimer(this);
+        connect(refresh,SIGNAL(timeout()),this,SLOT(refresh()));
+        refresh->start(30000);
 
-			if (settings::getSettings("DB")=="0")
-            {
-				db = QSqlDatabase::addDatabase("QSQLITE", "connection");
-				db.setDatabaseName(settings::getSettings("file"));
-            }
-            else
-            {
-                db = QSqlDatabase::addDatabase("QMYSQL", "connection");
-                db.setHostName(settings::getSettings("Host"));
-                db.setDatabaseName(settings::getSettings("base"));
-                db.setUserName(settings::getSettings("login"));
-                db.setPassword(settings::getSettings("passwd"));
-			}
+        if (settings::getSettings("DB")=="0")
+        {
+            db = QSqlDatabase::addDatabase("QSQLITE", "connection");
+            db.setDatabaseName(settings::getSettings("file"));
+        }
+        else
+        {
+            db = QSqlDatabase::addDatabase("QMYSQL", "connection");
+            db.setHostName(settings::getSettings("Host"));
+            db.setDatabaseName(settings::getSettings("base"));
+            db.setUserName(settings::getSettings("login"));
+            db.setPassword(settings::getSettings("passwd"));
+        }
 
-			model = new QSqlTableModel(ui->tableView,db);
-			model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-			if (!model->database().open())
-			{
-				QMessageBox::critical(this, this->windowTitle(), tr("База данных не может быть открыта: %1").arg(model->database().lastError().databaseText()));
-				return;
-			}
-			model->setTable("table");
-			ui->tableView->setModel(model);
-            this->refresh();
-			splash->finish(this);
+        model = new QSqlTableModel(ui->tableView,db);
+	model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+        if (!model->database().open())
+        {
+            QMessageBox::critical(this, this->windowTitle(), tr("База данных не может быть открыта: %1").arg(model->database().lastError().databaseText()));
+            return;
+	}
+	model->setTable("work");
+	ui->tableView->setModel(model);
+	this->refresh();
+	model->select();
+	splash->finish(this);
 }
 
 MainWindow::~MainWindow()
@@ -66,10 +67,10 @@ void MainWindow::refresh()
 		QMessageBox::critical(this, this->windowTitle(), tr("База данных не может быть открыта: %1").arg(model->database().lastError().databaseText()));
 		return;
 	}
-	model->setTable("table");
+	model->setTable("work");
 	if (!model->select())
 	{
-		QMessageBox::critical(this, this->windowTitle(), tr("Модель не может быть открыта: %1").arg(model->lastError().databaseText()));
+		QMessageBox::critical(this, this->windowTitle(), tr("Модель не может быть открыта: <br> %1").arg(model->lastError().text()));
 		return;
 	}
 	ui->tableView->setColumnHidden(0,true);
@@ -104,8 +105,8 @@ void MainWindow::on_btn_delete_clicked()
 	}
 	else
 	{
-		model->database().rollback();
-		QMessageBox::critical(this, this->windowTitle(), tr("Данные не сохранены: %1").arg(model->lastError().databaseText()));
+	    QMessageBox::critical(this, this->windowTitle(), tr("Данные не сохранены: %1").arg(model->lastError().text()));
+	    model->database().rollback();
 	}
 	model->database().close();
 	ui->tableView->resizeColumnsToContents();
@@ -115,7 +116,8 @@ void MainWindow::on_btn_delete_clicked()
 void MainWindow::about()
 {
 QMessageBox::about( this, "About DBSan",
-        "Copyright (c) 2009 FreeNET Inc. BSD license\n\n"
+        "Copyright (c) 2009 FreeNET Inc. All rights reserved.\n"
+        "Use of this source code is governed by a BSD-style license\n\n"
         "For technical support, call +7(960)720-32-36 or +7(910)777-36-76\n"
         "mailto: avikez@gmail.com\n");
 }

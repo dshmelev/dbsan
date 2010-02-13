@@ -28,8 +28,8 @@ protected:
 
 private:
 	QSqlTableModel *model;
-    Ui::Dialog *m_ui;
-	QString StrKey;
+        Ui::Dialog *m_ui;
+        int StrKey;
 
 private slots:
 	void on_buttonBox_accepted();
