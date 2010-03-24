@@ -2,9 +2,6 @@
 #include <QTextCodec>
 #include <QSettings>
 #include <QFontDialog>
-
-
-
 #include "mainwindow.h"
 
 

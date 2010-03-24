@@ -57,6 +57,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <value key="QtVersionId" type="int">0</value>
+   <value key="ToolChain" type="int">0</value>
    <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">2</value>
    <value key="buildDirectory" type="QString">/home/avik/workspace/dbsan</value>
@@ -247,48 +248,42 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">ALSA_PLUGINS_DIR=/usr/lib/alsa-lib</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-5tIu5ielXv,guid=10d4a58f8a73ce397140c5254b76b875</value>
-    <value type="QString">DESKTOP_SESSION=default</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-WUuVDYeAeG,guid=31c5e002993d1de33c3a05880000000a</value>
     <value type="QString">DISPLAY=:0.0</value>
-    <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
-    <value type="QString">GS_LIB=/home/avik/.fonts</value>
-    <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/avik/.gtkrc-2.0::/home/avik/.kde4/share/config/gtkrc-2.0</value>
-    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/avik/.gtkrc::/home/avik/.kde4/share/config/gtkrc</value>
+    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-x12S7G/socket</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/avik/.gtkrc-1.2-gnome2</value>
     <value type="QString">G_BROKEN_FILENAMES=1</value>
     <value type="QString">HISTCONTROL=erasedups</value>
     <value type="QString">HISTSIZE=1000</value>
     <value type="QString">HOME=/home/avik</value>
     <value type="QString">INPUTRC=/etc/inputrc</value>
-    <value type="QString">KDE_FULL_SESSION=true</value>
-    <value type="QString">KDE_MULTIHEAD=false</value>
-    <value type="QString">KDE_SESSION_UID=1000</value>
-    <value type="QString">KDE_SESSION_VERSION=4</value>
     <value type="QString">LANG=ru_RU.UTF-8</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
     <value type="QString">LESS=-R</value>
     <value type="QString">LOGNAME=avik</value>
     <value type="QString">MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins</value>
-    <value type="QString">OOO_FORCE_DESKTOP=gnome</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-avik</value>
     <value type="QString">PATH=/usr/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/bin/perlbin/site:/usr/bin/perlbin/vendor:/usr/bin/perlbin/core</value>
     <value type="QString">PKG_CONFIG_PATH=/usr/lib/pkgconfig</value>
     <value type="QString">PS3=> </value>
     <value type="QString">PS4=+ </value>
-    <value type="QString">PWD=/home/avik/Documents</value>
+    <value type="QString">PWD=/home/avik</value>
     <value type="QString">QTDIR=/usr/share/qt</value>
-    <value type="QString">QT_PLUGIN_PATH=/home/avik/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
-    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1800,unix/laptop:/tmp/.ICE-unix/1800</value>
+    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1728,unix/laptop:/tmp/.ICE-unix/1728</value>
     <value type="QString">SHELL=/bin/bash</value>
-    <value type="QString">SHLVL=1</value>
+    <value type="QString">SHLVL=3</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-x12S7G/socket.ssh</value>
+    <value type="QString">TERM=linux</value>
     <value type="QString">USER=avik</value>
-    <value type="QString">WINDOWPATH=7</value>
-    <value type="QString">XCURSOR_THEME=Oxygen_Zion</value>
+    <value type="QString">WINDOWPATH=3</value>
+    <value type="QString">XAUTHORITY=/home/avik/.Xauthority</value>
     <value type="QString">XDG_CACHE_HOME=/home/avik/.cache</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg</value>
     <value type="QString">XDG_CONFIG_HOME=/home/avik/.config</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/local/share</value>
     <value type="QString">XDG_DATA_HOME=/home/avik/.local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1266071668.433625-978465895</value>
-    <value type="QString">XDM_MANAGED=method=classic,auto</value>
+    <value type="QString">XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1269458125.318052-2000339987</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
     <value type="QString">/home/avik/workspace/dbsan/bdase_san.pro</value>
@@ -308,48 +303,42 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">ALSA_PLUGINS_DIR=/usr/lib/alsa-lib</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-5tIu5ielXv,guid=10d4a58f8a73ce397140c5254b76b875</value>
-    <value type="QString">DESKTOP_SESSION=default</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-WUuVDYeAeG,guid=31c5e002993d1de33c3a05880000000a</value>
     <value type="QString">DISPLAY=:0.0</value>
-    <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
-    <value type="QString">GS_LIB=/home/avik/.fonts</value>
-    <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/avik/.gtkrc-2.0::/home/avik/.kde4/share/config/gtkrc-2.0</value>
-    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/avik/.gtkrc::/home/avik/.kde4/share/config/gtkrc</value>
+    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-x12S7G/socket</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/avik/.gtkrc-1.2-gnome2</value>
     <value type="QString">G_BROKEN_FILENAMES=1</value>
     <value type="QString">HISTCONTROL=erasedups</value>
     <value type="QString">HISTSIZE=1000</value>
     <value type="QString">HOME=/home/avik</value>
     <value type="QString">INPUTRC=/etc/inputrc</value>
-    <value type="QString">KDE_FULL_SESSION=true</value>
-    <value type="QString">KDE_MULTIHEAD=false</value>
-    <value type="QString">KDE_SESSION_UID=1000</value>
-    <value type="QString">KDE_SESSION_VERSION=4</value>
     <value type="QString">LANG=ru_RU.UTF-8</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
     <value type="QString">LESS=-R</value>
     <value type="QString">LOGNAME=avik</value>
     <value type="QString">MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins</value>
-    <value type="QString">OOO_FORCE_DESKTOP=gnome</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-avik</value>
     <value type="QString">PATH=/usr/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/bin/perlbin/site:/usr/bin/perlbin/vendor:/usr/bin/perlbin/core</value>
     <value type="QString">PKG_CONFIG_PATH=/usr/lib/pkgconfig</value>
     <value type="QString">PS3=> </value>
     <value type="QString">PS4=+ </value>
-    <value type="QString">PWD=/home/avik/Documents</value>
+    <value type="QString">PWD=/home/avik</value>
     <value type="QString">QTDIR=/usr/share/qt</value>
-    <value type="QString">QT_PLUGIN_PATH=/home/avik/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
-    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1800,unix/laptop:/tmp/.ICE-unix/1800</value>
+    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1728,unix/laptop:/tmp/.ICE-unix/1728</value>
     <value type="QString">SHELL=/bin/bash</value>
-    <value type="QString">SHLVL=1</value>
+    <value type="QString">SHLVL=3</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-x12S7G/socket.ssh</value>
+    <value type="QString">TERM=linux</value>
     <value type="QString">USER=avik</value>
-    <value type="QString">WINDOWPATH=7</value>
-    <value type="QString">XCURSOR_THEME=Oxygen_Zion</value>
+    <value type="QString">WINDOWPATH=3</value>
+    <value type="QString">XAUTHORITY=/home/avik/.Xauthority</value>
     <value type="QString">XDG_CACHE_HOME=/home/avik/.cache</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg</value>
     <value type="QString">XDG_CONFIG_HOME=/home/avik/.config</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/local/share</value>
     <value type="QString">XDG_DATA_HOME=/home/avik/.local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1266071668.433625-978465895</value>
-    <value type="QString">XDM_MANAGED=method=classic,auto</value>
+    <value type="QString">XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1269458125.318052-2000339987</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -366,48 +355,42 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">ALSA_PLUGINS_DIR=/usr/lib/alsa-lib</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-MBnDhDz2tT,guid=02e4dd37a90f1f91d9f56cff4b744a9d</value>
-    <value type="QString">DESKTOP_SESSION=default</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-WUuVDYeAeG,guid=31c5e002993d1de33c3a05880000000a</value>
     <value type="QString">DISPLAY=:0.0</value>
-    <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
-    <value type="QString">GS_LIB=/home/avik/.fonts</value>
-    <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/avik/.gtkrc-2.0::/home/avik/.kde4/share/config/gtkrc-2.0</value>
-    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/avik/.gtkrc::/home/avik/.kde4/share/config/gtkrc</value>
+    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-x12S7G/socket</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/avik/.gtkrc-1.2-gnome2</value>
     <value type="QString">G_BROKEN_FILENAMES=1</value>
     <value type="QString">HISTCONTROL=erasedups</value>
     <value type="QString">HISTSIZE=1000</value>
     <value type="QString">HOME=/home/avik</value>
     <value type="QString">INPUTRC=/etc/inputrc</value>
-    <value type="QString">KDE_FULL_SESSION=true</value>
-    <value type="QString">KDE_MULTIHEAD=false</value>
-    <value type="QString">KDE_SESSION_UID=1000</value>
-    <value type="QString">KDE_SESSION_VERSION=4</value>
     <value type="QString">LANG=ru_RU.UTF-8</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
     <value type="QString">LESS=-R</value>
     <value type="QString">LOGNAME=avik</value>
     <value type="QString">MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins</value>
-    <value type="QString">OOO_FORCE_DESKTOP=gnome</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-avik</value>
     <value type="QString">PATH=/usr/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/bin/perlbin/site:/usr/bin/perlbin/vendor:/usr/bin/perlbin/core</value>
     <value type="QString">PKG_CONFIG_PATH=/usr/lib/pkgconfig</value>
     <value type="QString">PS3=> </value>
     <value type="QString">PS4=+ </value>
-    <value type="QString">PWD=/home/avik/Documents</value>
+    <value type="QString">PWD=/home/avik</value>
     <value type="QString">QTDIR=/usr/share/qt</value>
-    <value type="QString">QT_PLUGIN_PATH=/home/avik/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
-    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1842,unix/laptop:/tmp/.ICE-unix/1842</value>
+    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1728,unix/laptop:/tmp/.ICE-unix/1728</value>
     <value type="QString">SHELL=/bin/bash</value>
-    <value type="QString">SHLVL=1</value>
+    <value type="QString">SHLVL=3</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-x12S7G/socket.ssh</value>
+    <value type="QString">TERM=linux</value>
     <value type="QString">USER=avik</value>
-    <value type="QString">WINDOWPATH=7</value>
-    <value type="QString">XCURSOR_THEME=Oxygen_Zion</value>
+    <value type="QString">WINDOWPATH=3</value>
+    <value type="QString">XAUTHORITY=/home/avik/.Xauthority</value>
     <value type="QString">XDG_CACHE_HOME=/home/avik/.cache</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg</value>
     <value type="QString">XDG_CONFIG_HOME=/home/avik/.config</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/local/share</value>
     <value type="QString">XDG_DATA_HOME=/home/avik/.local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1265912476.395243-210997487</value>
-    <value type="QString">XDM_MANAGED=method=classic,auto</value>
+    <value type="QString">XDG_SESSION_COOKIE=c5af000571f51314b1f2c30c4a46441a-1269458125.318052-2000339987</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">true</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -465,7 +448,7 @@
  </data>
  <data>
   <variable>defaultFileEncoding</variable>
-  <value type="QByteArray">System</value>
+  <value type="QByteArray">UTF-8</value>
  </data>
  <data>
   <variable>project</variable>

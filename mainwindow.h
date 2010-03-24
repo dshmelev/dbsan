@@ -26,8 +26,9 @@ private:
 	QSqlTableModel *model;
 
 private slots:
-        void on_actionSettings_triggered();
-        void on_btnEd_clicked();
+    void on_btn_filter_clicked();
+    void on_actionSettings_triggered();
+    void on_btnEd_clicked();
 	void on_btn_delete_clicked();
 	void refresh();
 	void on_btnAdd_clicked();

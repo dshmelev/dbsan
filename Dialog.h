@@ -23,6 +23,7 @@ public:
 	~Dialog();
 	void edit(int);
 	void SetModel(QSqlTableModel*);
+    void func_search();
 protected:
     void changeEvent(QEvent *e);
 
@@ -30,9 +31,11 @@ private:
 	QSqlTableModel *model;
         Ui::Dialog *m_ui;
         int StrKey;
+        bool search;
 
 private slots:
-	void on_buttonBox_accepted();
+    void on_buttonBox_rejected();
+ void on_buttonBox_accepted();
 };
 
 #endif // DIALOG_H

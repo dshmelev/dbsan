@@ -112,12 +112,36 @@ void settings::on_new_btn_clicked()
 {
     if (m_ui->local_radio->isChecked())
     {
-        QString str = QFileDialog::getExistingDirectory()+"/database.sqlite";
+        QString str = QFileDialog::getExistingDirectory()+"/db.sqlite";
         QFileInfo dbfile(str);
         if (!dbfile.isFile())
         {
             m_ui->local_edit->setText(str);
         }
-		else QMessageBox::critical(this,"ERROR",QString::fromLocal8Bit("Ошибка. В данной дириктории уже существует файл базы. Замена файла неминуемо приведет к потери данных. Операция остановлена."));
+        else
+        {
+            QMessageBox::critical(this,"ERROR","Ошибка. В данной дириктории уже существует файл базы. Замена файла неминуемо приведет к потери данных. Операция остановлена.");
+            return;
+        }
+        QFile file(str);
+        file.open(QIODevice::Append | QIODevice::Text);
+
+
+        QSqlDatabase db;
+        db = QSqlDatabase::addDatabase("QSQLITE", "create_db");
+        db.setDatabaseName(str);
+        QMessageBox::critical(this,"",db.lastError().databaseText());
+        QSqlQuery query(db);
+        db.open();
+        query.exec( tr(
+         "create table employee ( "
+         "  id integer PRIMARY KEY, "
+         "  name char(30) not null, "
+         "  born date null, "
+         "  salary numeric(12,2), "
+         "  married boolean NULL ) " ) );
+        QMessageBox::critical(this,"",query.lastError().databaseText());
+        file.close();
+        db.close();
     }
 }

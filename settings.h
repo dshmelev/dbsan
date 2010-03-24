@@ -5,6 +5,9 @@
 #include <QSettings>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
 
 namespace Ui {
     class settings;
