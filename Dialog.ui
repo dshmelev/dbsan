@@ -9,12 +9,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>441</width>
-    <height>249</height>
+    <width>439</width>
+    <height>247</height>
    </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Добавить запись</string>
   </property>
   <property name="modal">
    <bool>false</bool>
@@ -174,6 +171,9 @@
        </item>
        <item>
         <widget class="QDateEdit" name="ed_data_call">
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::UpDownArrows</enum>
+         </property>
          <property name="currentSection">
           <enum>QDateTimeEdit::DaySection</enum>
          </property>

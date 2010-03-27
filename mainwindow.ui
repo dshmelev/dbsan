@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>598</width>
+    <height>398</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -106,7 +106,7 @@
       <item>
        <widget class="QPushButton" name="btn_filter">
         <property name="text">
-         <string>Search</string>
+         <string>Поиск</string>
         </property>
        </widget>
       </item>
@@ -129,7 +129,7 @@
       <item>
        <widget class="QPushButton" name="btnAdd">
         <property name="text">
-         <string>Add</string>
+         <string>Добавить</string>
         </property>
        </widget>
       </item>
@@ -152,7 +152,7 @@
       <item>
        <widget class="QPushButton" name="btnEd">
         <property name="text">
-         <string>Edit</string>
+         <string>Редактировать</string>
         </property>
        </widget>
       </item>
@@ -175,7 +175,7 @@
       <item>
        <widget class="QPushButton" name="btn_delete">
         <property name="text">
-         <string>Delete</string>
+         <string>Удалить</string>
         </property>
        </widget>
       </item>
@@ -204,35 +204,84 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
-     <height>18</height>
+     <width>598</width>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
      <string>Меню</string>
     </property>
+    <addaction name="action_Refresh"/>
     <addaction name="actionSettings"/>
-    <addaction name="actionAbout"/>
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Прочее</string>
+    </property>
+    <addaction name="action_Help"/>
+    <addaction name="action_About"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Выполнить</string>
+    </property>
+    <addaction name="action_Search"/>
+    <addaction name="separator"/>
+    <addaction name="action_Add"/>
+    <addaction name="action_Edit"/>
+    <addaction name="action_Delete"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionQuit">
    <property name="text">
-    <string>Quit</string>
+    <string>Выход</string>
    </property>
   </action>
-  <action name="actionAbout">
+  <action name="action_About">
    <property name="text">
-    <string>About</string>
+    <string>О программе</string>
    </property>
   </action>
   <action name="actionSettings">
    <property name="text">
-    <string>Settings</string>
+    <string>Настройки</string>
+   </property>
+  </action>
+  <action name="action_Search">
+   <property name="text">
+    <string>Поиск</string>
+   </property>
+  </action>
+  <action name="action_Add">
+   <property name="text">
+    <string>Добавить</string>
+   </property>
+  </action>
+  <action name="action_Edit">
+   <property name="text">
+    <string>Редактировать</string>
+   </property>
+  </action>
+  <action name="action_Delete">
+   <property name="text">
+    <string>Удалить</string>
+   </property>
+  </action>
+  <action name="action_Help">
+   <property name="text">
+    <string>Справка</string>
+   </property>
+  </action>
+  <action name="action_Refresh">
+   <property name="text">
+    <string>Обновить</string>
    </property>
   </action>
  </widget>

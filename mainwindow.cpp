@@ -2,17 +2,24 @@
 #include "ui_mainwindow.h"
 #include "Dialog.h"
 #include "settings.h"
+#include <QCalendarWidget>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
 	QSplashScreen *splash = new QSplashScreen;
 	splash->setPixmap(QPixmap(":/res/splash.jpg"));
-    splash->showMessage("DBsan v.0.1 \n FreeNET 2009",Qt::Alignment(Qt::AlignRight | Qt::AlignTop),"white");
+	splash->showMessage("DBsan v.0.1 \n FreeNET 2009",Qt::Alignment(Qt::AlignRight | Qt::AlignTop),"white");
 	splash->show();
         ui->setupUi(this);
         QSqlDatabase db;
-        connect(ui->actionAbout,SIGNAL(triggered(bool)),this,SLOT(about()));
+	connect(ui->action_About,SIGNAL(triggered()),this,SLOT(about()));
+	connect(ui->action_Add,SIGNAL(triggered()),this,SLOT(on_btnAdd_clicked()));
+	connect(ui->action_Delete,SIGNAL(triggered()),this,SLOT(on_btn_delete_clicked()));
+	connect(ui->action_Edit,SIGNAL(triggered()),this,SLOT(on_btnEd_clicked()));
+	connect(ui->action_Search,SIGNAL(triggered()),this,SLOT(on_btn_filter_clicked()));
+	connect(ui->action_Refresh,SIGNAL(triggered()),this,SLOT(refresh()));
         QTimer *refresh = new QTimer(this);
         connect(refresh,SIGNAL(timeout()),this,SLOT(refresh()));
         refresh->start(30000);
@@ -53,6 +60,7 @@ void MainWindow::on_btnAdd_clicked()
 {
 	Dialog dlg;
 	dlg.SetModel(model);
+	dlg.setWindowTitle(tr("Добавить запись"));
 	dlg.exec();
 }
 
@@ -107,8 +115,8 @@ void MainWindow::about()
 QMessageBox::about( this, "About DBSan",
         "Copyright (c) 2009 FreeNET Inc. All rights reserved.\n"
         "Use of this source code is governed by a BSD-style license\n\n"
-        "For technical support, call +7(960)720-32-36 or +7(910)777-36-76\n"
-        "mailto: avikez@gmail.com\n");
+	"For technical support, call +7(960)720-32-36\n"
+	"mailto: avikez@gmail.com or dmytry.shmelyov@intel.com\n");
 }
 
 void MainWindow::on_btnEd_clicked()
@@ -116,6 +124,7 @@ void MainWindow::on_btnEd_clicked()
 	int row =ui->tableView->selectionModel()->currentIndex().row();
 	Dialog dlg;
 	dlg.SetModel(model);
+	dlg.setWindowTitle(tr("Редактировать запись"));
 	dlg.edit(row);
 	dlg.exec();
 }
@@ -131,5 +140,6 @@ void MainWindow::on_btn_filter_clicked()
     Dialog dlg;
     dlg.SetModel(model);
     dlg.func_search();
+    dlg.setWindowTitle(tr("Поиск по базе"));
     dlg.exec();
 }
